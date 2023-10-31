@@ -1,7 +1,17 @@
 
+
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class Main {
     public static void main(String[] args) {
-        List<Student> students = /* мой список студентов */;
+        List<Student> students = List.of(
+                new Student("Nick", List.of(Double.valueOf(2), Double.valueOf(4.5), Double.valueOf(3)), "Информатика"),
+                new Student("Bob", List.of(Double.valueOf(2), Double.valueOf(3.5), Double.valueOf(4)), "Биология"),
+                new Student("Kitty", List.of(Double.valueOf(3), Double.valueOf(4.5), Double.valueOf(5)), "Информатика"),
+                new Student("Alice", List.of(Double.valueOf(2), Double.valueOf(4.5), Double.valueOf(3)), "Биология"),
+                new Student("John", List.of(Double.valueOf(5), Double.valueOf(5), Double.valueOf(5)), "Информатика")
+        );
 
         List<Student> topStudents = students.stream()
                 .filter(student -> "Информатика".equals(student.getSpecialty()))
